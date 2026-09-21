@@ -1,4 +1,5 @@
 import React from 'react';
+import '../EmployeeForm.css';
 
 class EmployeeForm extends React.Component {
   constructor(props) {
@@ -23,35 +24,43 @@ class EmployeeForm extends React.Component {
     return (
       <div>
         <h2>Add New Employee</h2>
-        <form onSubmit={this.handleSubmit}>
+        <form className="employee-form" onSubmit={this.handleSubmit}>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
+            id="name"
             name="name"
-            placeholder="Name"
             value={this.state.name}
             onChange={this.handleChange}
           />
+
+          <label htmlFor="email">Email</label>
           <input
             type="email"
+            id="email"
             name="email"
-            placeholder="Email"
             value={this.state.email}
             onChange={this.handleChange}
           />
+
+          <label htmlFor="title">Job Title</label>
           <input
             type="text"
+            id="title"
             name="title"
-            placeholder="Job Title"
             value={this.state.title}
             onChange={this.handleChange}
           />
+
+          <label htmlFor="department">Department</label>
           <input
             type="text"
+            id="department"
             name="department"
-            placeholder="Department"
             value={this.state.department}
             onChange={this.handleChange}
           />
+
           <button type="submit">Submit</button>
         </form>
       </div>
