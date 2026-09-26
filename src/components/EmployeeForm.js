@@ -16,7 +16,7 @@ class EmployeeForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log(this.state);
+    this.props.addEmployee(this.state);
     this.setState({ name: '', email: '', title: '', department: '' });
   }
 
@@ -63,6 +63,13 @@ class EmployeeForm extends React.Component {
 
           <button type="submit">Submit</button>
         </form>
+
+        <h3>Employees</h3>
+        <ul>
+          {this.props.employees.map((emp, index) => (
+            <li key={index}>{emp.name} — {emp.title}</li>
+          ))}
+        </ul>
       </div>
     );
   }
